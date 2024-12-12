@@ -1,3 +1,5 @@
+from typing import List, Dict
+
 import math
 
 import radioactivenuclides as ran
@@ -8,7 +10,7 @@ def _sci_not_to_num(significand, exponent):
     return significand * 10 ** exponent
 
 
-def printnuclides():
+def printnuclides() -> None:
 
     """
     Print details of the the contents of
@@ -37,7 +39,7 @@ def printnuclides():
     print("-" * 71)
 
 
-def decay_list(nuclidekey, halflives, startingvalue = 1048576):
+def decay_list(nuclidekey: str, halflives: int, startingvalue: int = 1048576) -> List:
 
     """
     For the specified nuclide creates a list of
@@ -63,7 +65,7 @@ def decay_list(nuclidekey, halflives, startingvalue = 1048576):
     return dl
 
 
-def decay_table(nuclidekey, halflives, startingvalue = 1048576):
+def decay_table(nuclidekey: str, halflives: int, startingvalue: int = 1048576) -> None:
 
     """
     For specified nuclide prints table of half lives and years,
@@ -100,7 +102,7 @@ def decay_table(nuclidekey, halflives, startingvalue = 1048576):
     print("-" * tablewidth)
 
 
-def at_time(nuclidekey, years, startingvalue = 1048576):
+def at_time(nuclidekey: str, years: int, startingvalue: int = 1048576) -> Dict:
 
     """
     Calculates amount of nuclide remaining after
@@ -122,7 +124,7 @@ def at_time(nuclidekey, years, startingvalue = 1048576):
     return { "remaining_decimal": remaining_decimal, "remaining_amount": remaining_amount }
 
 
-def time_to(nuclidekey, remaining_decimal):
+def time_to(nuclidekey: str, remaining_decimal: float) -> float:
 
     """
     Calculates the amount of time for a nuclide
